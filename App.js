@@ -1,20 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
-import ChatScreen from "./components/chat"
+import ChatScreen from "./components/chat";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-        name="chat"
-        component={ChatScreen}
-        options={{
-          title: "Chat"
-        }}
+          name="chat"
+          component={ChatScreen}
+          options={{
+            title: "Chat"
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
