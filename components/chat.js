@@ -33,6 +33,9 @@ const ChatInput = ({ onSendMessage }) => {
                 onChangeText={setMessage}
                 placeholder="Digite sua mensagem..."
                 placeholderTextColor="#666"
+                multiline= {true}
+                
+                
             />
             <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
                 <Text style={styles.sendButtonText}>Enviar</Text>
@@ -52,15 +55,16 @@ const ChatScreen = () => {
         if (isInitialized) {
             setMessages([...messages, { text: message, isRight: true }]); // Adiciona a mensagem localmente
             socket.emit('message', message); // Envia a mensagem para o servidor
+            flatListRef.current.scrollToEnd({ animated: true });
         }
     };
 
     // Efeito para rolar automaticamente a lista para o final quando as mensagens mudam
-    useEffect(() => {
-        if (flatListRef.current) {
-            flatListRef.current.scrollToEnd({ animated: true });
-        }
-    }, [messages]);
+    // useEffect(() => {
+    //     if (flatListRef.current) {
+    //         flatListRef.current.scrollToEnd({ animated: true });
+    //     }
+    // }, [messages]);
 
     return (
         <View style={styles.container}>

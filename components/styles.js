@@ -38,12 +38,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 25,
         marginRight: 10,
+        maxHeight: 100,
     },
     sendButton: {
         backgroundColor: '#02bbff',
         paddingVertical: 10,
         paddingHorizontal: 20,
         borderRadius: 25,
+        display: 'flex'
     },
     sendButtonText: {
         color: '#fff',
