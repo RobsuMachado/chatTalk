@@ -19,7 +19,7 @@ export default function ChatsTabScreen() {
             headerTitle: 'Conversas',
             headerTitleStyle: { color: "#00b2ff" },
             headerLeft: () => (
-                <TouchableOpacity onPress={() => navigation.navigate('ChatScreen')}>
+                <TouchableOpacity onPress={() => navigation.navigate('NavigationScreen')}>
                     <Feather
                         name='chevron-left'
                         size={25}

@@ -4,7 +4,7 @@ import { View, TouchableOpacity } from 'react-native';
 import ChatScreen from './src/pages/ChatScreen';
 import ChatsTabScreen from './src/pages/ChatsTabScreen';
 import { Feather } from '@expo/vector-icons';
-import NavigationScreen from './src/routes/NavigationScreen';
+import NavigationScreen from './src/pages/NavigationScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,6 @@ export default function App() {
           component={NavigationScreen}
           options={{
             title: "Menu de Navegação",
-            // headerShown: false
           }}
         />
 
