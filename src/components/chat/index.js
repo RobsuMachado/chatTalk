@@ -1,8 +1,9 @@
 // ChatScreen.js
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import styles from './styles';
 import useSocket from '../../utils/socketClientConfig'; // Importe o hook useSocket do arquivo socket.js
+import { Feather, FontAwesome } from '@expo/vector-icons';
 
 // Componente para exibir uma bolha de chat
 const ChatBubble = ({ message, isRight }) => {
@@ -31,21 +32,26 @@ const ChatInput = ({ onSendMessage }) => {
                 style={styles.input}
                 value={message}
                 onChangeText={setMessage}
-                placeholder="Digite sua mensagem..."
+                placeholder="Mensagem"
                 placeholderTextColor="#666"
-                multiline= {true}
-                
-                
+                multiline={true}
             />
+
             <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
-                <Text style={styles.sendButtonText}>Enviar</Text>
+                <View style={styles.sendButtonIcon}>
+                    <Feather
+                        name='send'
+                        size={30}
+                        color={'#00b2ff'}
+                    />
+                </View>
             </TouchableOpacity>
         </View>
     );
 };
 
 // Componente principal da tela de chat
-const ChatScreen = () => {
+const Chat = () => {
     const { socket, isInitialized } = useSocket();
     const [messages, setMessages] = useState([]); // Estado para armazenar as mensagens
     const flatListRef = useRef(); // Referência para o FlatList
@@ -83,4 +89,4 @@ const ChatScreen = () => {
     );
 };
 
-export default ChatScreen;
+export default Chat;

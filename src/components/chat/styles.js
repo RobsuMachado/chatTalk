@@ -8,11 +8,14 @@ const styles = StyleSheet.create({
     },
     bubbleContainer: {
         maxWidth: '80%',
-        padding: 10,
-        marginVertical: 5,
-        borderRadius: 10,
+        padding: 8,
+        paddingBottom: 9,
+        paddingLeft: 10,
+        marginVertical: 3,
+        borderRadius: 15,
     },
     leftBubble: {
+        marginLeft: 20,
         alignSelf: 'flex-start',
         backgroundColor: '#999999',
     },
@@ -27,30 +30,29 @@ const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        borderTopWidth: 1,
-        borderTopColor: '#ccc',
         paddingVertical: 10,
     },
     input: {
         flex: 1,
-        paddingHorizontal: 15,
+        paddingHorizontal: 20,
         paddingVertical: 10,
         backgroundColor: '#fff',
         borderRadius: 25,
         marginRight: 10,
         maxHeight: 100,
+        fontSize: 16
     },
     sendButton: {
-        backgroundColor: '#02bbff',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
+        backgroundColor: 'transparent',
+        padding: 7,
         borderRadius: 25,
-        display: 'flex'
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    sendButtonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: 'bold',
+    sendButtonIcon: {
+        marginRight: 3,
+        marginTop: 3
     }
 })
 

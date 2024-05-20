@@ -1,77 +1,35 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { View, TouchableOpacity } from 'react-native';
-import ChatScreen from './src/components/chat';
+import ChatScreen from './src/pages/ChatScreen';
 import ChatsTabScreen from './src/pages/ChatsTabScreen';
 import { Feather } from '@expo/vector-icons';
+import NavigationScreen from './src/routes/NavigationScreen';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="chatsTab"
-          component={ChatsTabScreen}
+          name="NavigationScreen"
+          component={NavigationScreen}
           options={{
-            headerTitle: 'Conversas',
-            headerTitleStyle: ({ color: "#00b2ff" }),
-
-            headerLeft: () => (
-              <TouchableOpacity>
-                <Feather
-                  name='chevron-left'
-                  size={25}
-                  color={'#00b2ff'}
-                  style={{ alignItems: 'flex-start', marginRight: 20 }}
-                />
-              </TouchableOpacity>),
-
-            headerRight: () => (
-              <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 20 }}>
-                <TouchableOpacity>
-                  <Feather
-                    name='users'
-                    size={22}
-                    color='#00b2ff'
-                    // onPress={() => { navigation.navigate('Nome da Pagina'); }}
-                  />
-                </TouchableOpacity>
-
-                <TouchableOpacity>
-                  <Feather
-                    name='camera'
-                    size={22}
-                    color='#00b2ff'
-                    // onPress={() => { navigation.navigate('Nome da Pagina'); }}
-                  />
-                </TouchableOpacity>
-
-                <TouchableOpacity>
-                  <Feather
-                    name='more-vertical'
-                    size={22}
-                    color='#00b2ff'
-                    // onPress={() => { navigation.navigate('Nome da Pagina'); }}
-                  />
-                </TouchableOpacity>
-              </View>
-            ),
-            headerShadowVisible: false,
+            title: "Menu de Navegação",
+            // headerShown: false
           }}
         />
 
         <Stack.Screen
-          name="chat"
-          component={ChatScreen}
-          options={{
-            headerTitle: 'Chat',
-            headerTitleStyle: ({ color: "#00b2ff" }),
-          }}
-          // onPress={() => { navigation.navigate('<NOME DA PAGINA>'); }}
+          name="ChatsTabScreen"
+          component={ChatsTabScreen}
         />
+
+        <Stack.Screen
+          name="ChatScreen"
+          component={ChatScreen}
+                />
       </Stack.Navigator>
     </NavigationContainer>
   );

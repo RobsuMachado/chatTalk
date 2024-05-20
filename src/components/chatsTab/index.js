@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
 const ChatsTab = ({
@@ -9,8 +10,9 @@ const ChatsTab = ({
     lastMessageTime,
     unreadMessages
 }) => {
+    const navigation = useNavigation();
     return (
-        <TouchableOpacity onPress={() => { }}>
+        <TouchableOpacity onPress={() => {navigation.navigate('ChatScreen')}}>
         <View style={styles.container}>
             <Image source={profileImage } style={styles.profileImage} />
             <View style={styles.textContainer}>
