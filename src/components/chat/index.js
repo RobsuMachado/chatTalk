@@ -3,9 +3,8 @@ import React, { useState, useRef } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import styles from './styles';
 import useSocket from '../../utils/socketClientConfig'; // Importe o hook useSocket do arquivo socket.js
-import { Feather, FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
-// Componente para exibir uma bolha de chat
 const ChatBubble = ({ message, isRight }) => {
     return (
         <View style={[styles.bubbleContainer, isRight ? styles.rightBubble : styles.leftBubble]}>
@@ -14,14 +13,12 @@ const ChatBubble = ({ message, isRight }) => {
     );
 };
 
-// Componente para entrada de mensagem
 const ChatInput = ({ onSendMessage }) => {
     const [message, setMessage] = useState('');
 
-    // Função para enviar mensagem
     const sendMessage = () => {
         if (message.trim() !== '') {
-            onSendMessage(message);
+            onSendMessage(message.trim() + " ");
             setMessage('');
         }
     };
