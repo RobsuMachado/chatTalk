@@ -1,10 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, TouchableOpacity } from 'react-native';
-import ChatScreen from './src/pages/ChatScreen';
-import ChatsTabScreen from './src/pages/ChatsTabScreen';
-import { Feather } from '@expo/vector-icons';
 import NavigationScreen from './src/pages/NavigationScreen';
+import ChatsTabScreen from './src/pages/ChatsTabScreen';
+import ChatScreen from './src/pages/ChatScreen';
+import CamScreen from './src/pages/CamScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +27,11 @@ export default function App() {
         <Stack.Screen
           name="ChatScreen"
           component={ChatScreen}
+                />
+
+        <Stack.Screen
+          name="CamScreen"
+          component={CamScreen}
                 />
       </Stack.Navigator>
     </NavigationContainer>

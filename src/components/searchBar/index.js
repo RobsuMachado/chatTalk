@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, onClose }) => {
     const [query, setQuery] = useState('');
 
     const handleSearch = () => {
         if (onSearch) {
             onSearch(query);
         }
+    };
+
+    const handleClose = () => {
+        setQuery('');
+        if (onClose) {
+            onClose();
+        }
+        return false;
     };
 
     return (
@@ -18,9 +26,10 @@ const SearchBar = ({ onSearch }) => {
                 placeholder="Buscar"
                 value={query}
                 onChangeText={setQuery}
+                onSubmitEditing={handleSearch}
             />
-            <TouchableOpacity onPress={handleSearch} style={styles.closeButton}>
-                <Feather name="x" size={22}/>
+            <TouchableOpacity onPress={handleClose}>
+                <Feather name="x" size={22} />
             </TouchableOpacity>
         </View>
     );
@@ -39,10 +48,8 @@ const styles = StyleSheet.create({
     input: {
         flex: 1,
         fontSize: 16,
-        paddingVertical: 5
+        paddingVertical: 5,
     },
-    closeButton: {
-    }
 });
 
 export default SearchBar;

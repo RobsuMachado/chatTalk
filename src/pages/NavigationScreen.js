@@ -13,6 +13,10 @@ export default function NavigationScreen () {
         navigation.navigate('ChatsTabScreen');
     };
 
+    const handleCamScreenPress = () => {
+        navigation.navigate('CamScreen');
+    };
+
     
 
     return (
@@ -24,6 +28,10 @@ export default function NavigationScreen () {
 
                 <TouchableOpacity onPress={handleChatsTabScreenPress}>
                     <Text style={styles.button}>Chats Tab Screen</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={handleCamScreenPress}>
+                    <Text style={styles.button}>Cam Screen</Text>
                 </TouchableOpacity>
             </ScrollView>
         </SafeAreaView >

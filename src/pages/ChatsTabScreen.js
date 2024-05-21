@@ -14,12 +14,17 @@ export default function ChatsTabScreen() {
         console.log('Search Query:', query);
     }, []);
 
+    const handleCloseSearchBar = useCallback(() => {
+        setSearchVisible(false);
+        return false;
+    }, []);
+
     useLayoutEffect(() => {
         navigation.setOptions({
             headerTitle: 'Conversas',
             headerTitleStyle: { color: "#00b2ff" },
             headerLeft: () => (
-                <TouchableOpacity onPress={() => navigation.navigate('NavigationScreen')}>
+                <TouchableOpacity onPress={() => navigation.navigate('ChatScreen')}>
                     <Feather
                         name='chevron-left'
                         size={25}
@@ -30,13 +35,15 @@ export default function ChatsTabScreen() {
             ),
             headerRight: () => (
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
-                    <TouchableOpacity onPress={() => setSearchVisible(true)}>
-                        <Feather
-                            name='search'
-                            size={22}
-                            color='#00b2ff'
-                        />
-                    </TouchableOpacity>
+                    {!isSearchVisible && (
+                        <TouchableOpacity onPress={() => setSearchVisible(true)}>
+                            <Feather
+                                name='search'
+                                size={22}
+                                color='#00b2ff'
+                            />
+                        </TouchableOpacity>
+                    )}
                     <TouchableOpacity>
                         <Feather
                             name='camera'
@@ -55,13 +62,13 @@ export default function ChatsTabScreen() {
             ),
             headerShadowVisible: false,
         });
-    }, [navigation, setSearchVisible]);
+    }, [navigation, isSearchVisible]);
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
             {isSearchVisible && (
                 <View style={{ backgroundColor: '#ffffff', paddingHorizontal: 10 }}>
-                    <SearchBar onSearch={handleSearch} />
+                    <SearchBar onSearch={handleSearch} onClose={handleCloseSearchBar} />
                 </View>
             )}
             <ContactList />
