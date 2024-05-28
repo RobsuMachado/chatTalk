@@ -14,7 +14,7 @@ const ChatsTab = ({
     return (
         <TouchableOpacity onPress={() => {navigation.navigate('ChatScreen')}}>
         <View style={styles.container}>
-            <Image source={profileImage } style={styles.profileImage} />
+            <Image source={profileImage} style={styles.profileImage} />
             <View style={styles.textContainer}>
                 <Text style={styles.username}>{username}</Text>
                 <Text

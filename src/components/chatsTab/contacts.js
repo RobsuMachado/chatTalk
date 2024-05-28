@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import ChatsTab from '../chatsTab';
+import ChatsTab from '.';
 import { useNavigation } from '@react-navigation/native';
 
 const contacts = [

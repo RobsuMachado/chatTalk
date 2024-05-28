@@ -16,7 +16,18 @@ export default function NavigationScreen () {
     const handleCamScreenPress = () => {
         navigation.navigate('CamScreen');
     };
+    
+    const handleProScheduleScreenPress = () => {
+        navigation.navigate('ProScheduleScreen');
+    };
 
+    const handlePatScheduleScreenPress = () => {
+        navigation.navigate('PatScheduleScreen');
+    };
+
+    const handlescheludePress = () => {
+        navigation.navigate('schelude');
+    };
     
 
     return (
@@ -30,9 +41,18 @@ export default function NavigationScreen () {
                     <Text style={styles.button}>Chats Tab Screen</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={handleCamScreenPress}>
-                    <Text style={styles.button}>Cam Screen</Text>
+                <TouchableOpacity onPress={handleProScheduleScreenPress}>
+                    <Text style={styles.button}>Professinal Schedule Screen</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={handlePatScheduleScreenPress}>
+                    <Text style={styles.button}>Patient Schedule Screen</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={handlescheludePress}>
+                    <Text style={styles.button}>schelude</Text>
+                </TouchableOpacity>
+
             </ScrollView>
         </SafeAreaView >
     );

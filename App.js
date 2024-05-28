@@ -4,6 +4,9 @@ import NavigationScreen from './src/pages/NavigationScreen';
 import ChatsTabScreen from './src/pages/ChatsTabScreen';
 import ChatScreen from './src/pages/ChatScreen';
 import CamScreen from './src/pages/CamScreen';
+import ProScheduleScreen from './src/pages/ProScheduleScreen';
+import PatScheduleScreen from './src/pages/PatScheduleScreen';
+import schelude from './src/components/schelude';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +36,22 @@ export default function App() {
           name="CamScreen"
           component={CamScreen}
                 />
+
+        <Stack.Screen
+          name="ProScheduleScreen"
+          component={ProScheduleScreen}
+                />
+
+        <Stack.Screen
+          name="PatScheduleScreen"
+          component={PatScheduleScreen}
+                />
+
+        <Stack.Screen
+          name="schelude"
+          component={schelude}
+                />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

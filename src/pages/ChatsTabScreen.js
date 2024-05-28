@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState, useCallback } from 'react';
 import { SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import ContactList from '../components/contacts';
+import ContactList from '../components/chatsTab/contacts';
 import { Feather } from '@expo/vector-icons';
 import SearchBar from '../components/searchBar';
 
@@ -24,7 +24,7 @@ export default function ChatsTabScreen() {
             headerTitle: 'Conversas',
             headerTitleStyle: { color: "#00b2ff" },
             headerLeft: () => (
-                <TouchableOpacity onPress={() => navigation.navigate('ChatScreen')}>
+                <TouchableOpacity onPress={() => navigation.navigate('NavigationScreen')}>
                     <Feather
                         name='chevron-left'
                         size={25}
