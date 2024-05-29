@@ -40,7 +40,7 @@ LocaleConfig.locales['br'] = {
 
 LocaleConfig.defaultLocale = 'br';
 
-export default function schelude() {
+export default function Schelude() {
     const [selected, setSelected] = useState('');
     return (
         <SafeAreaView style={styles.container}>
@@ -64,12 +64,15 @@ export default function schelude() {
                             <Text style={styles.itemName}>{item.username}</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.itemBottom}>
-                            <Text style={styles.itemText}>{item.data}</Text>
-                            <TouchableOpacity>
-                                <Feather name='edit' size={20} color={'#666666'} />
+                        <View style={styles.itemBottom}>
+                            <Text style={styles.itemNote}>Nota:</Text>
+                            <TouchableOpacity style={styles.itemRow}>
+                                <Text style={styles.itemText}>{item.data}</Text>
+                                <TouchableOpacity>
+                                    <Feather name='edit' size={20} color={'#666666'} style={styles.iconEdit} />
+                                </TouchableOpacity>
                             </TouchableOpacity>
-                        </TouchableOpacity>
+                        </View>
                     </View>
                 )}
 
@@ -98,9 +101,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#00b2ff',
         borderTopEndRadius: 15,
         borderTopStartRadius: 15,
-        paddingVertical: 12,
-        paddingLeft: 20,
-        paddingRight: 10,
+        paddingVertical: 6,
+        paddingHorizontal: 10,
         marginHorizontal: 20,
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -108,31 +110,53 @@ const styles = StyleSheet.create({
         gap: 12
     },
     profileImage: {
-        width: 40,
-        height: 40,
+        backgroundColor: '#ffffff',
+        width: 35,
+        height: 35,
         borderRadius: 25,
+    },
+    itemName: {
+        color: '#ffffff',
+        fontWeight: '800',
+        fontSize: 17,
     },
     itemBottom: {
         backgroundColor: '#ffffff',
         borderBottomEndRadius: 15,
         borderBottomStartRadius: 15,
-        paddingVertical: 12,
-        paddingLeft: 20,
-        paddingRight: 10,
+        // paddingVertical: 12,
+        // paddingLeft: 20,
+        // paddingRight: 10,
         marginHorizontal: 20,
+    },
+    itemNote: {
+        // backgroundColor: 'red',
+        color: '#999999',
+        fontWeight: '800',
+        fontSize: 12,
+        justifyContent: 'flex-start',
+        marginTop: 6,
+        marginLeft: 10,
+        marginRight: 10,
+    },
+    itemRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    itemName: {
-        color: '#ffffff',
-        fontWeight: '600',
-        fontSize: 18,
-    },
     itemText: {
+        // backgroundColor: 'red',
         color: '#333333',
         fontWeight: '500',
         fontSize: 16,
+        marginBottom: 12,
+        marginLeft: 20,
+        marginRight: 10,
+    },
+    iconEdit: {
+        marginBottom: 12,
+        marginLeft: 20,
+        marginRight: 10,
     }
 
 })

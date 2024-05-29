@@ -25,8 +25,12 @@ export default function NavigationScreen () {
         navigation.navigate('PatScheduleScreen');
     };
 
-    const handlescheludePress = () => {
-        navigation.navigate('schelude');
+    const handleScheludePress = () => {
+        navigation.navigate('Schelude');
+    };
+
+    const handleCalendarPress = () => {
+        navigation.navigate('Calendar');
     };
     
 
@@ -49,8 +53,12 @@ export default function NavigationScreen () {
                     <Text style={styles.button}>Patient Schedule Screen</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={handlescheludePress}>
-                    <Text style={styles.button}>schelude</Text>
+                <TouchableOpacity onPress={handleScheludePress}>
+                    <Text style={styles.button}>Schelude</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={handleCalendarPress}>
+                    <Text style={styles.button}>Calendar</Text>
                 </TouchableOpacity>
 
             </ScrollView>
